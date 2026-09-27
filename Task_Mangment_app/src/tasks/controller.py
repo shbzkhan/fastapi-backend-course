@@ -12,3 +12,11 @@ def create_task(body:TaskSchema, db:Session):
         "status":"Created Successfully",
         "data": new_task
     }
+
+def get_all_tasks(db:Session):
+    all_tasks = db.query(TaskModel).all()
+    print(all_tasks)
+    return {
+        "status":"Tasks fetched successfully",
+        "data" : all_tasks
+    }
