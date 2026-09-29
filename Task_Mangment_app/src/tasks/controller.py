@@ -31,7 +31,6 @@ def update_task(body:TaskSchema, task_id: int, db:Session):
     for field, value in body.items():
         setattr(one_task, field, value)
 
-
     db.add(one_task)
     db.commit()
     db.refresh(one_task)
